@@ -27,4 +27,8 @@ module TestHelpers
   def json_api_headers
     { "Accept": "application/vnd.api+json", "Content-Type": "application/vnd.api+json" }
   end
+
+  def json_api_accept_header
+    { "Accept": "application/vnd.api+json" }
+  end
 end
