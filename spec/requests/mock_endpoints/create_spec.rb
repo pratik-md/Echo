@@ -2,24 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'MockEndpoint', type: :request do
   describe '.create' do
-    let!(:path) { '/v1/endpoints' }
-    let!(:params) {
-      {
-        "data": {
-          "type": "endpoints",
-          "attributes": {
-            "verb": "GET",
-            "path": "/greeting",
-            "response": {
-              "code": 200,
-              "headers": {"Content-Type": "application/json"},
-              "body": "\"{ \"message\": \"Hello, world\" }\""
-            }
-          }
-        }
-      }.to_json
-    }
-    let!(:headers) { {"Accept": "application/vnd.api+json", "Content-Type": "application/vnd.api+json"} }
+    let!(:path) { endpoints_path }
+    let!(:params) { sample_post_params }
+    let!(:headers) { json_api_headers }
 
     subject {
       post path, params: params, headers: headers
