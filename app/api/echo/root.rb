@@ -17,5 +17,8 @@ module Echo
     rescue_from ActiveRecord::RecordNotUnique do |e|
       error_response(message: e.message, status: 422)
     end
+
+    mount Echo::V1::Endpoints
+    mount Echo::V1::MockEndpoints
   end
 end

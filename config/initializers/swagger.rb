@@ -1,4 +1,4 @@
-GrapeSwaggerRails.options.url = '/api/docs.json'
+GrapeSwaggerRails.options.url = '/docs.json'
 GrapeSwaggerRails.options.app_name = 'Echo'
 GrapeSwaggerRails.options.hide_api_key_input = true
 
